@@ -1,0 +1,11 @@
+{
+  "name": "mcp-restart",
+  "version": "0.3.0",
+  "description": "Restart MCP servers in a running Claude Code session: wrapped servers hot-swap with no failed calls and their new tools reach the model at once. A pane, /mcp-restart, tools for Claude and a hang watchdog. Windows.",
+  "author": { "name": "X-15", "url": "https://github.com/X-15" },
+  "homepage": "https://github.com/X-15/mcp-restart",
+  "repository": "https://github.com/X-15/mcp-restart",
+  "license": "MIT",
+  "keywords": ["mcp", "restart", "hot-reload", "claude-code", "desktop"],
+  "types": "./types/index.d.ts"
+}

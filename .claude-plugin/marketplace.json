@@ -1,0 +1,12 @@
+{
+  "name": "mcp-restart",
+  "owner": { "name": "X-15" },
+  "description": "mcp-restart: restart MCP servers in a running Claude Code session",
+  "plugins": [
+    {
+      "name": "mcp-restart",
+      "source": "./",
+      "description": "Restart MCP servers in a running Claude Code session: wrapped servers hot-swap and their new tools reach the model at once"
+    }
+  ]
+}
