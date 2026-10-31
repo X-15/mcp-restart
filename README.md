@@ -4,6 +4,10 @@ Restart MCP servers in a running Claude Code session, the desktop app included, 
 
 **Windows only for now.** Tested with Claude Code 2.1.309 in the Claude desktop app and the CLI on Windows 11.
 
+![The MCP servers pane in the Claude desktop app: each stdio server of the session with its mode (hot-swap, generation 1), uptime and a Restart button](docs/pane.png)
+
+*`/mcp-restart` in the Claude desktop app: every server of the session runs behind the proxy (hot-swap), each with its own Restart.*
+
 ## Why
 
 What a Claude Code session does with a stdio MCP server, observed with 2.1.309:
