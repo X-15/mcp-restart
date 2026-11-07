@@ -164,7 +164,7 @@ function readJson(file) {
 }
 
 // ${VAR} and ${VAR:-default}, as Claude Code expands them in .mcp.json
-const expand = (value, extra = {}) =>
+export const expand = (value, extra = {}) =>
   String(value).replace(/\$\{(\w+)(?::-([^}]*))?\}/g, (_, key, fallback) => extra[key] ?? process.env[key] ?? fallback ?? '')
 
 function collect(list, servers, meta, extra) {

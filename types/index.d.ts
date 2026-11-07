@@ -32,8 +32,29 @@ export type PaneView = {
 // An MCP tool call of the model's in flight, for the hang watchdog above the prompt.
 export type ModelCall = { id: string; tool: string; server: string; since: number }
 
+// A server added to the config after this session started, which late-host.mjs runs for the session.
+export type LateServerRow = {
+  name: string
+  scope: string
+  // starting, running, restarting, down (exited; the next call starts it), failed, stopped
+  state: string
+  // the tool names on the server; the model calls each as mcp__mcp-restart__<server>__<tool>
+  tools: string[]
+  generation: number
+  error: string | null
+}
+
+export type LateView = {
+  // the servers this session started itself, worked out once per session; null until then
+  baseline: string[] | null
+  reason: string | null
+  servers: LateServerRow[]
+  // why the host is not running, when it is not
+  hostError: string | null
+}
+
 declare module 'claude-code' {
   interface PluginState {
-    'mcp-restart': { view: Shaped<PaneView>; calls: Shaped<ModelCall[]>; tick: number }
+    'mcp-restart': { view: Shaped<PaneView>; calls: Shaped<ModelCall[]>; tick: number; late: Shaped<LateView> }
   }
 }
